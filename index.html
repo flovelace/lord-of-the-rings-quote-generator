@@ -14,46 +14,73 @@
     <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
+    <nav class="navbar navbar-default">
+      <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#myPage">Logo</a>
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collasp navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#myPage">HOME</a></li>
             <li><a href="#movie">MOVIES</a></li>
             <li><a href="#book">BOOKS</a></li>
             <li><a href="#character">CHARACTERS</a></li>
             <li><a href="#quotes">QUOTES</a></li>
-            <li>
-              <a href="#"><span class="glyphicon glyphicon-search"></span></a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-        <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="./assets/img/lord.jpg" alt="New York" class="d-block w-100">
-      </div>
-      <div class="item">
-        <img src="./assets/img/thumb.jpg" alt="Chicago" class="d-block w-100">
-         </div>
-          <div class="item">
-        <img src="./assets/img/h.jpg" alt="Los Angeles" class="d-block w-100">
+    <div class="center">
+      <div class="dropdown">
+        <button
+          type="button"
+          class="btn dropdown-toggle"
+          data-toggle="dropdown"
+        >
+          Dropdown button
+        </button>
+        <div class="dropdown-menu">
+          <ul>
+            <li>
+              <a class="dropdown-item" href="#">Aragorn</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Legolas</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Gandalf</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Gollum</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Samwise</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Gimli</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Frodo</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Pippin</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Merry</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-
-
   </body>
 </html>
