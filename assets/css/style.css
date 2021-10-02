@@ -9,22 +9,22 @@
   color: black;
   font-weight: bolder;
 }
-body {
+/*body {
   background-image: url("../img/lord.jpg");
-}
+}*/
 
 .center {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: 5px solid #ffff00;
+  /*border: 5px solid #ffff00;*/
   padding: 0;
   opacity: 0.9;
   color: black;
 }
 .btn {
-  background-color: yellow;
+  /*background-color: yellow;*/
   padding: 20px;
   opacity: 0.5;
   border-radius: none;
@@ -35,4 +35,8 @@ body {
   text-align: center;
   list-style: none;
   color: black;
+}
+
+.hide {
+  display: none;
 }
