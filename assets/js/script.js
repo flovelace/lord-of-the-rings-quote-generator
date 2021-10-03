@@ -40,57 +40,59 @@ boromirButton.addEventListener('click', boromirQuote)
 
 function frodoQuote() {
     frodoCard.classList.remove('hide')
-    fetchCharacterInfo("Frodo Baggins")
+    fetchQuoteForCharacter("Frodo Baggins")
 }
 
 function samQuote() {
     samCard.classList.remove('hide')
-    fetchCharacterInfo("Samwise Gamgee")
+    fetchQuoteForCharacter("Samwise Gamgee")
 }
 
 function merryQuote() {
     merryCard.classList.remove('hide')
-    fetchCharacterInfo("Merry Gamgee")
+    fetchQuoteForCharacter("Merry Gamgee")
 }
 
 function pippinQuote() {
     pippinCard.classList.remove('hide')
-    fetchCharacterInfo("Pippin Gamgee")
+    fetchQuoteForCharacter("Pippin Gamgee")
 
 }
 
 function gandalfQuote() {
     gandalfCard.classList.remove('hide')
-    fetchCharacterInfo("Gandalf")
+    fetchQuoteForCharacter("Gandalf")
 }
 
 function aragornQuote() {
     aragornCard.classList.remove('hide')
-    fetchCharacterInfo("Aragorn II Elessar")
+    fetchQuoteForCharacter("Aragorn II Elessar")
 }
 
 function legolasQuote() {
     legolasCard.classList.remove('hide')
-    fetchCharacterInfo("Legolas")
+    fetchQuoteForCharacter("Legolas")
 }
 
 function gimliQuote() {
     gimliCard.classList.remove('hide')
-    fetchCharacterInfo("Gimli")
+    fetchQuoteForCharacter("Gimli")
 }
 
 function boromirQuote() {
     boromirCard.classList.remove('hide')
-    fetchCharacterInfo("Boromir")
+    fetchQuoteForCharacter("Boromir")
 }
 
+/* Global variables for fetching URL */
 var oneApiBaseUrl = "https://the-one-api.dev/v2/"
 var token = "Bearer ron5yZwz6rc4dCM-T5Z9"
 
-var characterId = ""
+var randomQuote = ""
 
-var fetchCharacterInfo = function (name) {
+var fetchQuoteForCharacter = function (name) {
 
+    /* Fetch character information */
     fetch(oneApiBaseUrl + "character?name=" + name, {
         method: "GET",
         headers: {
@@ -100,11 +102,36 @@ var fetchCharacterInfo = function (name) {
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data)
-                characterId = data.docs[0]._id
-
-                console.log(name + ": " + characterId)
+                console.log(name + ": " + data.docs[0]._id)
+                fetchCharacterQuotes(data.docs[0]._id)
             })
         }
     })
 }
 
+/* Fetch quote for a character */
+var fetchCharacterQuotes = function (characterId) {
+    console.log("fetchCharacterQuotes called with characterId=", characterId)
+    fetch(oneApiBaseUrl + "character/" + characterId + "/quote", {
+        method: "GET",
+        headers: {
+            "Authorization": token
+        }
+    }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data)
+                randomQuote = getRandomQuote(data.docs)
+            })
+        }
+    })
+}
+
+/* Get a random quote from all quotes of a character */
+var getRandomQuote = function (allCharacterQuotes) {
+    var numQuotes = allCharacterQuotes.length
+    var randomIndex = Math.floor(Math.random() * numQuotes)
+
+    console.log("Quote at index ", randomIndex, " is ", allCharacterQuotes[randomIndex].dialog)
+    return allCharacterQuotes[randomIndex].dialog
+}
