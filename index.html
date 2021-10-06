@@ -1,12 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Lord of the Rings Quote Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collasp navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#myPage">HOME</a></li>
+            <li><a href="#movie">MOVIES</a></li>
+            <li><a href="#book">BOOKS</a></li>
+            <li><a href="#character">CHARACTERS</a></li>
+            <li><a href="#quotes">QUOTES</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" id="button-container">
+      <div class="row align-items-start">
+        <div class="col">
+          <button type="button" class="btn btn-lg btn-dark" id="frodo-button">Frodo</button>
+        
+          <div class="col">
+            <div class="card hide" id="frodo-card" style="width: 18rem;">
+                <img src="../lord-of-the-rings-quote-generator/assets/img/frodo.jpg" class="card-img-top" alt="image">
+                <div class="card-body">
+                  <p class="card-text">"quote generated from API will go in here"</p>
+                  <button type="button" class="btn btn-lg btn-dark" id="close-button-frodo">Close</button>
+                </div>
+              </div>
+              </div>
+          </div>
+
+          <div class="container" id="button-container">
+            <div class="row align-items-start">
+              <div class="col">
+                <button type="button" class="btn btn-lg btn-dark" id="sam-button">Sam</button>
+              
+                <div class="col">
+                  <div class="card hide" id="sam-card" style="width: 18rem;">
+                      <img src="../lord-of-the-rings-quote-generator/assets/img/sam.jpg" class="card-img-top" alt="image">
+                      <div class="card-body">
+                        <p class="card-text">"quote generated from API will go in here"</p>
+                        <button type="button" class="btn btn-lg btn-dark" id="close-button-sam">Close</button>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="container" id="button-container">
+                  <div class="row align-items-start">
+                    <div class="col">
+                      <button type="button" class="btn btn-lg btn-dark" id="merry-button">Merry</button>
+                    
+                      <div class="col">
+                        <div class="card hide" id="merry-card" style="width: 18rem;">
+                            <img src="../lord-of-the-rings-quote-generator/assets/img/merry.jpeg" class="card-img-top" alt="image">
+                            <div class="card-body">
+                              <p class="card-text">"quote generated from API will go in here"</p>
+                              <button type="button" class="btn btn-lg btn-dark" id="close-button-merry">Close</button>
+                            </div>
+                          </div>
+                          </div>
+                      </div>
+
+                      <div class="container" id="button-container">
+                        <div class="row align-items-start">
+                          <div class="col">
+                            <button type="button" class="btn btn-lg btn-dark" id="pippin-button">Pippin</button>
+                          
+                            <div class="col">
+                              <div class="card hide" id="pippin-card" style="width: 18rem;">
+                                  <img src="../lord-of-the-rings-quote-generator/assets/img/pippin.png" class="card-img-top" alt="image">
+                                  <div class="card-body">
+                                    <p class="card-text">"quote generated from API will go in here"</p>
+                                    <button type="button" class="btn btn-lg btn-dark" id="close-button-pippin">Close</button>
+                                  </div>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="container" id="button-container">
+                              <div class="row align-items-start">
+                                <div class="col">
+                                  <button type="button" class="btn btn-lg btn-dark" id="gandalf-button">Gandalf</button>
+                                
+                                  <div class="col">
+                                    <div class="card hide" id="gandalf-card" style="width: 18rem;">
+                                        <img src="../lord-of-the-rings-quote-generator/assets/img/gandalf.jpg" class="card-img-top" alt="image">
+                                        <div class="card-body">
+                                          <p class="card-text">"quote generated from API will go in here"</p>
+                                          <button type="button" class="btn btn-lg btn-dark" id="close-button-gandalf">Close</button>
+                                        </div>
+                                      </div>
+                                      </div>
+                                  </div>
+
+                                  <div class="container" id="button-container">
+                                    <div class="row align-items-start">
+                                      <div class="col">
+                                        <button type="button" class="btn btn-lg btn-dark" id="aragorn-button">Aragorn</button>
+                                      
+                                        <div class="col">
+                                          <div class="card hide" id="aragorn-card" style="width: 18rem;">
+                                              <img src="../lord-of-the-rings-quote-generator/assets/img/aragorn.jpg" class="card-img-top" alt="image">
+                                              <div class="card-body">
+                                                <p class="card-text">"quote generated from API will go in here"</p>
+                                                <button type="button" class="btn btn-lg btn-dark" id="close-button-aragorn">Close</button>
+                                              </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container" id="button-container">
+                                          <div class="row align-items-start">
+                                            <div class="col">
+                                              <button type="button" class="btn btn-lg btn-dark" id="legolas-button">Legolas</button>
+                                            
+                                              <div class="col">
+                                                <div class="card hide" id="legolas-card" style="width: 18rem;">
+                                                    <img src="../lord-of-the-rings-quote-generator/assets/img/legolas.jpg" class="card-img-top" alt="image">
+                                                    <div class="card-body">
+                                                      <p class="card-text">"quote generated from API will go in here"</p>
+                                                      <button type="button" class="btn btn-lg btn-dark" id="close-button-legolas">Close</button>
+                                                    </div>
+                                                  </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="container" id="button-container">
+                                                <div class="row align-items-start">
+                                                  <div class="col">
+                                                    <button type="button" class="btn btn-lg btn-dark" id="gimli-button">Gimli</button>
+                                                  
+                                                    <div class="col">
+                                                      <div class="card hide" id="gimli-card" style="width: 18rem;">
+                                                          <img src="../lord-of-the-rings-quote-generator/assets/img/gimli.png" class="card-img-top" alt="image">
+                                                          <div class="card-body">
+                                                            <p class="card-text">"quote generated from API will go in here"</p>
+                                                            <button type="button" class="btn btn-lg btn-dark" id="close-button-gimli">Close</button>
+                                                          </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container" id="button-container">
+                                                      <div class="row align-items-start">
+                                                        <div class="col">
+                                                          <button type="button" class="btn btn-lg btn-dark" id="boromir-button">Boromir</button>
+                                                        
+                                                          <div class="col">
+                                                            <div class="card hide" id="boromir-card" style="width: 18rem;">
+                                                                <img src="../lord-of-the-rings-quote-generator/assets/img/boromir.jpg" class="card-img-top" alt="image">
+                                                                <div class="card-body">
+                                                                  <p class="card-text">"quote generated from API will go in here"</p>
+                                                                  <button type="button" class="btn btn-lg btn-dark" id="close-button-boromir">Close</button>
+                                                                </div>
+                                                              </div>
+                                                              </div>
+                                                          </div>
+
+    <div class="center">
+      <div class="dropdown">
+        <button
+          type="button"
+          class="btn dropdown-toggle"
+          data-toggle="dropdown"
+        >
+          Dropdown button
+        </button>
+        <div class="dropdown-menu">
+          <ul>
+            <li>
+              <a class="dropdown-item" href="#">Frodo</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Sam</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Merry</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Pippin</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Gandalf</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Aragorn</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Legolas</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Gimli</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Boromir</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
