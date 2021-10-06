@@ -41,47 +41,66 @@ boromirButton.addEventListener('click', boromirQuote)
 function frodoQuote() {
     frodoCard.classList.remove('hide')
     fetchQuoteForCharacter("Frodo Baggins")
+    var frodoQuoteEl = document.querySelector(".card-text-frodo")
+    frodoQuoteEl.innerHTML = randomQuote
+
 }
 
 function samQuote() {
     samCard.classList.remove('hide')
     fetchQuoteForCharacter("Samwise Gamgee")
+    var samQuoteEl = document.querySelector(".card-text-sam")
+    samQuoteEl.innerHTML = randomQuote
 }
 
 function merryQuote() {
     merryCard.classList.remove('hide')
     fetchQuoteForCharacter("Merry Gamgee")
+    var merryQuoteEl = document.querySelector(".card-text-merry")
+    merryQuoteEl.innerHTML = randomQuote
 }
 
 function pippinQuote() {
     pippinCard.classList.remove('hide')
     fetchQuoteForCharacter("Pippin Gamgee")
+    var pippinQuoteEl = document.querySelector(".card-text-pippin")
+    pippinQuoteEl.innerHTML = randomQuote
 
 }
 
 function gandalfQuote() {
     gandalfCard.classList.remove('hide')
     fetchQuoteForCharacter("Gandalf")
+    var gandalfQuoteEl = document.querySelector(".card-text-gandalf")
+    gandalfQuoteEl.innerHTML = randomQuote
 }
 
 function aragornQuote() {
     aragornCard.classList.remove('hide')
     fetchQuoteForCharacter("Aragorn II Elessar")
+    var aragornQuoteEl = document.querySelector(".card-text-aragorn")
+    aragornQuoteEl.innerHTML = randomQuote
 }
 
 function legolasQuote() {
     legolasCard.classList.remove('hide')
     fetchQuoteForCharacter("Legolas")
+    var legolasQuoteEl = document.querySelector(".card-text-legolas")
+    legolasQuoteEl.innerHTML = randomQuote
 }
 
 function gimliQuote() {
     gimliCard.classList.remove('hide')
     fetchQuoteForCharacter("Gimli")
+    var gimliQuoteEl = document.querySelector(".card-text-gimli")
+    gimliQuoteEl.innerHTML = randomQuote
 }
 
 function boromirQuote() {
     boromirCard.classList.remove('hide')
     fetchQuoteForCharacter("Boromir")
+    var boromirQuoteEl = document.querySelector(".card-text-boromir")
+    boromirQuoteEl.innerHTML = randomQuote
 }
 
 /* Global variables for fetching URL */
