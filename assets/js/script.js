@@ -1,3 +1,4 @@
+//global character variables
 var frodoButton = document.getElementById('frodo-button')
 var frodoCard = document.getElementById('frodo-card')
 
@@ -25,23 +26,81 @@ var gimliCard = document.getElementById('gimli-card')
 var boromirButton = document.getElementById('boromir-button')
 var boromirCard = document.getElementById('boromir-card')
 
+//variables for close button
+var closeButtonFrodo = document.getElementById('close-button-frodo')
+var closeButtonSam = document.getElementById('close-button-sam')
+var closeButtonMerry = document.getElementById('close-button-merry')
+var closeButtonPippin = document.getElementById('close-button-pippin')
+var closeButtonGandalf = document.getElementById('close-button-gandalf')
+var closeButtonAragorn = document.getElementById('close-button-aragorn')
+var closeButtonLegolas = document.getElementById('close-button-legolas')
+var closeButtonGimli = document.getElementById('close-button-gimli')
+var closeButtonBoromir = document.getElementById('close-button-boromir')
 
-frodoButton.addEventListener('click', frodoQuote)
-samButton.addEventListener('click', samQuote)
-merryButton.addEventListener('click', merryQuote)
-pippinButton.addEventListener('click', pippinQuote)
-gandalfButton.addEventListener('click', gandalfQuote)
-aragornButton.addEventListener('click', aragornQuote)
-legolasButton.addEventListener('click', legolasQuote)
-gimliButton.addEventListener('click', gimliQuote)
-boromirButton.addEventListener('click', boromirQuote)
+//event listener for close button
+closeButtonFrodo.addEventListener('click', closeWindowFrodo);
+closeButtonSam.addEventListener('click', closeWindowSam);
+closeButtonMerry.addEventListener('click', closeMerryWindow);
+closeButtonPippin.addEventListener('click', closePippinwindow);
+closeButtonGandalf.addEventListener('click', closeGandalfwindow);
+closeButtonAragorn.addEventListener('click', closeAragornWindow);
+closeButtonLegolas.addEventListener('click', closeLegolaswindow);
+closeButtonGimli.addEventListener('click', closeGimliWindow);
+closeButtonBoromir.addEventListener('click', closeBoromirWindow);
 
+//function to close the character window
+function closeWindowFrodo() {
+    frodoCard.classList.add('hide')
+}
 
+function closeWindowSam() {
+    samCard.classList.add('hide')
+}
 
+function closeMerryWindow() {
+    merryCard.classList.add('hide')
+}
+
+function closePippinwindow() {
+    pippinCard.classList.add('hide')
+}
+
+function closeGandalfwindow() {
+    gandalfCard.classList.add('hide')
+}
+
+function closeAragornWindow() {
+    aragornCard.classList.add('hide')
+}
+
+function closeLegolaswindow() {
+    legolasCard.classList.add('hide')
+}
+
+function closeGimliWindow() {
+    gimliCard.classList.add('hide')
+}
+
+function closeBoromirWindow() {
+    boromirCard.classList.add('hide')
+}
+
+//event listeners for character page
+frodoButton.addEventListener('click', frodoQuote);
+samButton.addEventListener('click', samQuote);
+merryButton.addEventListener('click', merryQuote);
+pippinButton.addEventListener('click', pippinQuote);
+gandalfButton.addEventListener('click', gandalfQuote);
+aragornButton.addEventListener('click', aragornQuote);
+legolasButton.addEventListener('click', legolasQuote);
+gimliButton.addEventListener('click', gimliQuote);
+boromirButton.addEventListener('click', boromirQuote);
+
+//functions to reveal each character
 function frodoQuote() {
     frodoCard.classList.remove('hide')
     fetchQuoteForCharacter("Frodo Baggins")
-    var frodoQuoteEl = document.querySelector(".card-text-frodo")
+    var frodoQuoteEl = document.getElementById("frodo")
     frodoQuoteEl.innerHTML = randomQuote
 
 }
@@ -49,21 +108,21 @@ function frodoQuote() {
 function samQuote() {
     samCard.classList.remove('hide')
     fetchQuoteForCharacter("Samwise Gamgee")
-    var samQuoteEl = document.querySelector(".card-text-sam")
+    var samQuoteEl = document.getElementById("sam")
     samQuoteEl.innerHTML = randomQuote
 }
 
 function merryQuote() {
     merryCard.classList.remove('hide')
     fetchQuoteForCharacter("Merry Gamgee")
-    var merryQuoteEl = document.querySelector(".card-text-merry")
+    var merryQuoteEl = document.getElementById("merry")
     merryQuoteEl.innerHTML = randomQuote
 }
 
 function pippinQuote() {
     pippinCard.classList.remove('hide')
     fetchQuoteForCharacter("Pippin Gamgee")
-    var pippinQuoteEl = document.querySelector(".card-text-pippin")
+    var pippinQuoteEl = document.getElementById("pippin")
     pippinQuoteEl.innerHTML = randomQuote
 
 }
@@ -71,35 +130,35 @@ function pippinQuote() {
 function gandalfQuote() {
     gandalfCard.classList.remove('hide')
     fetchQuoteForCharacter("Gandalf")
-    var gandalfQuoteEl = document.querySelector(".card-text-gandalf")
+    var gandalfQuoteEl = document.getElementById("gandalf")
     gandalfQuoteEl.innerHTML = randomQuote
 }
 
 function aragornQuote() {
     aragornCard.classList.remove('hide')
     fetchQuoteForCharacter("Aragorn II Elessar")
-    var aragornQuoteEl = document.querySelector(".card-text-aragorn")
+    var aragornQuoteEl = document.getElementById("aragorn")
     aragornQuoteEl.innerHTML = randomQuote
 }
 
 function legolasQuote() {
     legolasCard.classList.remove('hide')
     fetchQuoteForCharacter("Legolas")
-    var legolasQuoteEl = document.querySelector(".card-text-legolas")
+    var legolasQuoteEl = document.getElementById("legolas")
     legolasQuoteEl.innerHTML = randomQuote
 }
 
 function gimliQuote() {
     gimliCard.classList.remove('hide')
     fetchQuoteForCharacter("Gimli")
-    var gimliQuoteEl = document.querySelector(".card-text-gimli")
+    var gimliQuoteEl = document.getElementById("gimli")
     gimliQuoteEl.innerHTML = randomQuote
 }
 
 function boromirQuote() {
     boromirCard.classList.remove('hide')
     fetchQuoteForCharacter("Boromir")
-    var boromirQuoteEl = document.querySelector(".card-text-boromir")
+    var boromirQuoteEl = document.getElementById("boromir")
     boromirQuoteEl.innerHTML = randomQuote
 }
 
