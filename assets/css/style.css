@@ -9,10 +9,9 @@
   color: black;
   font-weight: bolder;
 }
-body {
+/*body {
   background-image: url("../img/lord.jpg");
-  color: white;
-}
+}*/
 
 .center {
   position: absolute;
