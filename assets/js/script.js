@@ -1,3 +1,4 @@
+//global character variables
 var frodoButton = document.getElementById('frodo-button')
 var frodoCard = document.getElementById('frodo-card')
 
@@ -25,19 +26,77 @@ var gimliCard = document.getElementById('gimli-card')
 var boromirButton = document.getElementById('boromir-button')
 var boromirCard = document.getElementById('boromir-card')
 
+//variables for close button
+var closeButtonFrodo = document.getElementById('close-button-frodo')
+var closeButtonSam = document.getElementById('close-button-sam')
+var closeButtonMerry = document.getElementById('close-button-merry')
+var closeButtonPippin = document.getElementById('close-button-pippin')
+var closeButtonGandalf = document.getElementById('close-button-gandalf')
+var closeButtonAragorn = document.getElementById('close-button-aragorn')
+var closeButtonLegolas = document.getElementById('close-button-legolas')
+var closeButtonGimli = document.getElementById('close-button-gimli')
+var closeButtonBoromir = document.getElementById('close-button-boromir')
 
-frodoButton.addEventListener('click', frodoQuote)
-samButton.addEventListener('click', samQuote)
-merryButton.addEventListener('click', merryQuote)
-pippinButton.addEventListener('click', pippinQuote)
-gandalfButton.addEventListener('click', gandalfQuote)
-aragornButton.addEventListener('click', aragornQuote)
-legolasButton.addEventListener('click', legolasQuote)
-gimliButton.addEventListener('click', gimliQuote)
-boromirButton.addEventListener('click', boromirQuote)
+//event listener for close button
+closeButtonFrodo.addEventListener('click', closeWindowFrodo);
+closeButtonSam.addEventListener('click', closeWindowSam);
+closeButtonMerry.addEventListener('click', closeMerryWindow);
+closeButtonPippin.addEventListener('click', closePippinwindow);
+closeButtonGandalf.addEventListener('click', closeGandalfwindow);
+closeButtonAragorn.addEventListener('click', closeAragornWindow);
+closeButtonLegolas.addEventListener('click', closeLegolaswindow);
+closeButtonGimli.addEventListener('click', closeGimliWindow);
+closeButtonBoromir.addEventListener('click', closeBoromirWindow);
 
+//function to close the character window
+function closeWindowFrodo() {
+    frodoCard.classList.add('hide')   
+}
 
+function closeWindowSam() {
+    samCard.classList.add('hide')
+}
 
+function closeMerryWindow() {
+    merryCard.classList.add('hide')
+}
+
+function closePippinwindow() {
+    pippinCard.classList.add('hide')
+}
+
+function closeGandalfwindow() {
+    gandalfCard.classList.add('hide')
+}
+
+function closeAragornWindow() {
+    aragornCard.classList.add('hide')
+}
+
+function closeLegolaswindow() {
+    legolasCard.classList.add('hide')
+}
+
+function closeGimliWindow() {
+    gimliCard.classList.add('hide')
+}
+
+function closeBoromirWindow() {
+    boromirCard.classList.add('hide')
+}
+
+//event listeners for character page
+frodoButton.addEventListener('click', frodoQuote);
+samButton.addEventListener('click', samQuote);
+merryButton.addEventListener('click', merryQuote);
+pippinButton.addEventListener('click', pippinQuote);
+gandalfButton.addEventListener('click', gandalfQuote);
+aragornButton.addEventListener('click', aragornQuote);
+legolasButton.addEventListener('click', legolasQuote);
+gimliButton.addEventListener('click', gimliQuote);
+boromirButton.addEventListener('click', boromirQuote);
+
+//functions to reveal each character
 function frodoQuote() {
     frodoCard.classList.remove('hide')
     fetchQuoteForCharacter("Frodo Baggins")
