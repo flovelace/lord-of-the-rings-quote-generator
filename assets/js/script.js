@@ -149,8 +149,10 @@ var oneApiBaseUrl = "https://the-one-api.dev/v2/"
 var token = "Bearer ron5yZwz6rc4dCM-T5Z9"
 
 var randomQuote = ""
+var data = []
 
 var fetchQuoteForCharacter = function (name, element) {
+
 
     /* Fetch character information */
     fetch(oneApiBaseUrl + "character?name=" + name, {
@@ -162,12 +164,16 @@ var fetchQuoteForCharacter = function (name, element) {
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data)
+                localStorage.setItem("characterData", JSON.stringify(data))
                 console.log(name + ": " + data.docs[0]._id)
                 fetchCharacterQuotes(data.docs[0]._id, element)
+
             })
         }
     })
+
 }
+
 
 /* Fetch quote for a character */
 var fetchCharacterQuotes = function (characterId, element) {
