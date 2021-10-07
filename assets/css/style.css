@@ -14,7 +14,7 @@ body {
   color: white;
 }
 
-.center {
+/*.center {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -23,12 +23,13 @@ body {
   padding: 0;
   opacity: 0.9;
   color: black;
-}
+}*/
 .btn {
   /*background-color: yellow;*/
-  padding: 20px;
+  padding: 10px;
   opacity: 0.5;
   border-radius: none;
+  color: black;
 }
 .dropdown-menu ul li {
   margin-top: 2px;
@@ -40,4 +41,43 @@ body {
 
 .hide {
   display: none;
+}
+
+.flexbox-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10pt;
+  padding-left: 40pt;
+  color: black;
+}
+
+#img-card { 
+background-color: antiquewhite;
+width: 260px;
+height: 260px;
+float: left;
+margin-left: 30%;
+margin-top: 150px;
+/*opacity: 0;*/
+padding-left: 4pt;
+padding-top: 4pt;
+
+}
+
+#quote-card {
+background-color: antiquewhite;
+width: 260px;
+height: 260px;
+margin-left: 60%;
+margin-top: 150px;
+/*opacity: 0;*/
+color: black;
+padding-inline-start: 5pt;
+}
+
+.clearbtn {
+display: flex;
+justify-content: center;
+color: black;
+
 }
