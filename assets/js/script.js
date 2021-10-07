@@ -99,67 +99,49 @@ boromirButton.addEventListener('click', boromirQuote);
 //functions to reveal each character
 function frodoQuote() {
     frodoCard.classList.remove('hide')
-    fetchQuoteForCharacter("Frodo Baggins")
-    var frodoQuoteEl = document.getElementById("frodo")
-    frodoQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Frodo Baggins", document.getElementById("frodo"))
 
 }
 
 function samQuote() {
     samCard.classList.remove('hide')
-    fetchQuoteForCharacter("Samwise Gamgee")
-    var samQuoteEl = document.getElementById("sam")
-    samQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Samwise Gamgee", document.getElementById("sam"))
 }
 
 function merryQuote() {
     merryCard.classList.remove('hide')
-    fetchQuoteForCharacter("Merry Gamgee")
-    var merryQuoteEl = document.getElementById("merry")
-    merryQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Merry Gamgee", document.getElementById("merry"))
 }
 
 function pippinQuote() {
     pippinCard.classList.remove('hide')
-    fetchQuoteForCharacter("Pippin Gamgee")
-    var pippinQuoteEl = document.getElementById("pippin")
-    pippinQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Pippin Gamgee", document.getElementById("pippin"))
 
 }
 
 function gandalfQuote() {
     gandalfCard.classList.remove('hide')
-    fetchQuoteForCharacter("Gandalf")
-    var gandalfQuoteEl = document.getElementById("gandalf")
-    gandalfQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Gandalf", document.getElementById("gandalf"))
 }
 
 function aragornQuote() {
     aragornCard.classList.remove('hide')
-    fetchQuoteForCharacter("Aragorn II Elessar")
-    var aragornQuoteEl = document.getElementById("aragorn")
-    aragornQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Aragorn II Elessar", document.getElementById("aragorn"))
 }
 
 function legolasQuote() {
     legolasCard.classList.remove('hide')
-    fetchQuoteForCharacter("Legolas")
-    var legolasQuoteEl = document.getElementById("legolas")
-    legolasQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Legolas", document.getElementById("legolas"))
 }
 
 function gimliQuote() {
     gimliCard.classList.remove('hide')
-    fetchQuoteForCharacter("Gimli")
-    var gimliQuoteEl = document.getElementById("gimli")
-    gimliQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Gimli", document.getElementById("gimli"))
 }
 
 function boromirQuote() {
     boromirCard.classList.remove('hide')
-    fetchQuoteForCharacter("Boromir")
-    var boromirQuoteEl = document.getElementById("boromir")
-    boromirQuoteEl.innerHTML = randomQuote
+    fetchQuoteForCharacter("Boromir", document.getElementById("boromir"))
 }
 
 /* Global variables for fetching URL */
@@ -168,7 +150,7 @@ var token = "Bearer ron5yZwz6rc4dCM-T5Z9"
 
 var randomQuote = ""
 
-var fetchQuoteForCharacter = function (name) {
+var fetchQuoteForCharacter = function (name, element) {
 
     /* Fetch character information */
     fetch(oneApiBaseUrl + "character?name=" + name, {
@@ -181,14 +163,14 @@ var fetchQuoteForCharacter = function (name) {
             response.json().then(function (data) {
                 console.log(data)
                 console.log(name + ": " + data.docs[0]._id)
-                fetchCharacterQuotes(data.docs[0]._id)
+                fetchCharacterQuotes(data.docs[0]._id, element)
             })
         }
     })
 }
 
 /* Fetch quote for a character */
-var fetchCharacterQuotes = function (characterId) {
+var fetchCharacterQuotes = function (characterId, element) {
     console.log("fetchCharacterQuotes called with characterId=", characterId)
     fetch(oneApiBaseUrl + "character/" + characterId + "/quote", {
         method: "GET",
@@ -200,6 +182,7 @@ var fetchCharacterQuotes = function (characterId) {
             response.json().then(function (data) {
                 console.log(data)
                 randomQuote = getRandomQuote(data.docs)
+                element.innerHTML = randomQuote
             })
         }
     })
