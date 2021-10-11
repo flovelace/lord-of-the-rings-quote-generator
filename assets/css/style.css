@@ -64,7 +64,7 @@ img {
 #quote-card {
   font-size: 2rem;
   font-family: "Apple Chancery, cursive";
-  overflow: scroll;
+  overflow: auto;
 }
 
 #info-card {
