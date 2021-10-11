@@ -104,7 +104,6 @@ var fetchQuoteForCharacter = function (name, element) {
             })
         }
     })
-
 }
 
 
@@ -130,14 +129,17 @@ var fetchCharacterQuotes = function (characterId, element) {
 
 function displayCharacterInfo(data) {
     var infoEl = document.getElementById("info-card")
+    infoEl.innerHTML = ""
     var InfoData = data.docs[0]
 
     var heading = document.createElement("h1")
     heading.innerHTML = InfoData.name
     infoEl.appendChild(heading);
 
-    var wikiUrlEl = document.createElement("p")
-    wikiUrlEl.innerHTML = InfoData.wikiUrl
+    var wikiUrlEl = document.createElement("a")
+    wikiUrlEl.textContent = InfoData.wikiUrl
+    wikiUrlEl.title = "Link to LOTR wiki"
+    wikiUrlEl.href = InfoData.wikiUrl
     infoEl.appendChild(wikiUrlEl)
 
     var heightEl = document.createElement("p")
@@ -145,7 +147,7 @@ function displayCharacterInfo(data) {
     infoEl.appendChild(heightEl)
 
     var raceEl = document.createElement("p")
-    raceEl.innerHTML = "Race :" + InfoData.race
+    raceEl.innerHTML = "Race: " + InfoData.race
     infoEl.appendChild(raceEl)
 }
 
@@ -153,6 +155,10 @@ function displayCharacterInfo(data) {
 var getRandomQuote = function (allCharacterQuotes) {
     var numQuotes = allCharacterQuotes.length
     var randomIndex = Math.floor(Math.random() * numQuotes)
+
+    if (numQuotes == 0) {
+        return "No Quote"
+    }
 
     console.log("Quote at index ", randomIndex, " is ", allCharacterQuotes[randomIndex].dialog)
     return allCharacterQuotes[randomIndex].dialog
