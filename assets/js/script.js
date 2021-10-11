@@ -42,12 +42,12 @@ function samQuote() {
 }
 
 function merryQuote() {
-    fetchQuoteForCharacter("Merry Gamgee", document.getElementById("merry"))
+    fetchQuoteForCharacter("Meriadoc Brandybuck", document.getElementById("merry"))
     document.getElementById("main-image-card").src = ("./assets/img/merry.jpeg")
 }
 
 function pippinQuote() {
-    fetchQuoteForCharacter("Pippin Gamgee", document.getElementById("pippin"))
+    fetchQuoteForCharacter("Peregrin Took", document.getElementById("pippin"))
     document.getElementById("main-image-card").src = ("./assets/img/pippin.png")
 }
 
